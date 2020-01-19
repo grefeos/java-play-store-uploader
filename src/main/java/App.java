@@ -193,7 +193,7 @@ public class App {
 
             // create a release on track
             System.out.println(String.format("On track:%s. Creating a release...", this.trackName));
-            TrackRelease release = new TrackRelease().setName("Automated upload").setStatus("completed")
+            TrackRelease release = new TrackRelease().setName(String.format("%s", apkMeta.getVersionName())).setStatus("completed")
                     .setVersionCodes(Collections.singletonList((long) apk.getVersionCode()))
                     .setReleaseNotes(releaseNotes);
             Track track = new Track().setReleases(Collections.singletonList(release));
